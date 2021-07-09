@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="address" class="com.kuang.pojo.Address">
+        <property name="address" value="西安"/>
+    </bean>
+
+    <bean id="student" class="com.kuang.pojo.Student">
+        <!--普通值注入，直接使用 value 即可-->
+           <property name="name" value="SKY"/>
+
+        <!--Bean注入，这里的值是一个引用，所以要用ref-->
+        <property name="address" ref="address"/>
+
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+
+        <!--List注入-->
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+                <value>游泳</value>
+                <value>看电影</value>
+                <value>打篮球</value>
+            </list>
+        </property>
+
+        <!--Map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1234567890"/>
+                <entry key="银行卡" value="0987654321"/>
+            </map>
+        </property>
+
+        <!--Set注入-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>BOB</value>
+                <value>COC</value>
+            </set>
+        </property>
+
+        <!--null注入-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--property注入-->
+        <property name="info">
+            <props>
+                <!--在我们的项目中，这些key值一般是：driver,url,username,password-->
+                <prop key="学号">11223344</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">谢大脚</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

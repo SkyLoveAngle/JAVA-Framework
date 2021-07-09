@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--bean就是java对象 , 由Spring创建和管理
+    一般我们创建对象：Hello hello = new Hello();
+    但是这里我们用了Bean，它的 id 的值相当于 变量名
+    class 的内容相当于 new的对象
+    property 相当于给对象中的属性设置了一个值
+    -->
+    <bean id="hello" class="com.kuang.pojo.Hello">
+        <property name="str" value="Spring"/>
+    </bean>
+
+</beans>
