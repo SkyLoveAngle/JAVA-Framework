@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <package name="com.kuang.pojo"/>
+    </typeAliases>
+    <mappers>
+        <!--当dao层接口类和对应的.xml文件不同名字的时候用resource，同名还可以用class-->
+        <mapper resource="com/kuang/dao/BookMapper.xml"/>
+    </mappers>
+
+</configuration>
